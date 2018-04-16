@@ -1,0 +1,17 @@
+## Help
+# help: [A] `h` - Displays the help commands available
+alias h='showhelp $configDir/.bashrc_help'
+
+## >> Edit below here << ##
+
+
+
+## >> Edit above here << ##
+
+# Function to display the help comments
+# Takes parameter of full file path to file to output help comments
+showhelp () {
+    awk '/(# help:\s.*)/ { printf substr($0, 9); printf "\n" }' $1 | sed ''/A/s//$(printf "\033[32mA\033[0m")/'' | sed ''/F/s//$(printf "\033[32mF\033[0m")/'' | sed ''/P/s//$(printf "\033[32mP\033[0m")/''
+}
+
+finishedLoading="${finishedLoading}Type 'h' for list of help commands\n"
