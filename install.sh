@@ -8,6 +8,6 @@ echo "debug=1" >> ~/.bashrc_settings
 echo "Setup complete!"
 echo "Debug is on by default. Run `obrc` to edit it"
 
-sbrc
+source ~/.bashrc
 
 h
