@@ -18,9 +18,3 @@ alias ocd='explorer .'
 oc () {
     npp $configDir/.bashrc_$1
 }
-
-## >> Edit below here << ##
-
-
-
-## >> Edit above here << ##

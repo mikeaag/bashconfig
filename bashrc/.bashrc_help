@@ -2,6 +2,9 @@
 # help: [A] `h` - Displays the help commands available
 alias h='showhelp $configDir/.bashrc_help'
 
+# help: [A] `h-u` - Displays the commands for .bashrc_utilities
+alias h-u='showhelp $configDir/.bashrc_utilities'
+
 ## >> Edit below here << ##
 
 
