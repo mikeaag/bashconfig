@@ -86,4 +86,14 @@ gri() {
   git rebase -i head~$1
 }
 
+# help: [F] `gcr` - Git change remote
+# help:   [P1] New remote URL
+gcr() {
+  git remote -v;
+  git remote rm destination;
+  git remote -v;
+  git remote add origin $1;
+  git remote -v;
+}
+
 finishedLoading="${finishedLoading}This is from the git file\n"
