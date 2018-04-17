@@ -1,0 +1,76 @@
+# Git
+# help: [A] `gs` - Git status
+alias gs='git status -sb'
+# help: [A] `gpl` - Git pull
+alias gpl='git pull'
+# help: [A] `gps` - Git push
+alias gps='git push'
+# help: [A] `gf` - git fetch
+alias gf='git fetch'
+# help: [A] `gb` - git branch
+alias gb='git branch'
+# help: [A] `ga` - git add
+alias ga='git add'
+# help: [A] `gaa` - git add .
+alias gaa='git add --all && gs'
+# help: [A] `gap` - git add -p
+alias gap='git add -p'
+# help: [A] `gr` - git reset
+alias gr='git reset'
+# help: [A] `gc` - git commit
+alias gc='git commit'
+# help: [A] `gcwip` - commit everything with 'wip' as message
+alias gcwip='gcam "wip"'
+# help: [A] `gl` - pretty git log
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+# help: [A] `gll` - git log with changed files
+alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+# help: [A] `glh` - show head log
+alias glh='gl -1'
+# help: [A] `gsu` - add everything to git stash
+alias gsu='git stash -u'
+# help: [A] `gsp` - reapply latest stash
+alias gsp='git stash pop'
+# help: [A] `gcred` - set credentials to store (only needs to be called once)
+alias gcred='git config credential.helper "store"'
+# help: [A] `gck` - git checkout
+alias gck='git checkout'
+# help: [A] `gckd` - checkout develop
+alias gckd='gck develop'
+# help: [A] `gckm` - checkout master
+alias gckm='gck master'
+# help: [A] `gck-` - go back to the previous branch
+alias gck-='gck -'
+# help: [A] `gapplygitignore` - Applies gitignore to commited files
+alias gapplygitignore='git rm -r --cached .'
+# help: [A] `gcl` - git clone
+alias gcl='git clone'
+
+
+## Functions
+
+# help: [F] `gcm` - Git Commit With Message 
+# help:     [P] Commit Message
+gcm () { 
+    gc -m "$1" 
+}
+
+# help: [F] `gcmp` - Git Commit With Message Then Push 
+# help:     [P] Commit Message
+gcmp () { 
+    gcm "$1" && gps
+}
+
+# help: [F] `gcam` - Git Commit All With Message 
+# help:     [P] Commit Message
+gcam () { 
+    gaa && gc -m "$1"
+}
+
+# help: [F] `gcamp` - Git Commit All With Message Then Push 
+# help:     [P] Commit Message
+gcamp () { 
+    gcam "$1" && gps
+}
+
+finishedLoading="${finishedLoading}This is from the git file\n"
