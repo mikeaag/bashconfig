@@ -7,6 +7,8 @@ alias gpl='git pull'
 alias gps='git push'
 # help: [A] `gf` - git fetch
 alias gf='git fetch'
+# help: [A] `gfs` - git fetch and show status
+alias gfs='git fetch; git status'
 # help: [A] `gb` - git branch
 alias gb='git branch'
 # help: [A] `ga` - git add
