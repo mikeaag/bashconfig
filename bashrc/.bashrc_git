@@ -80,4 +80,10 @@ gcamp () {
     gcam "$1" && gps
 }
 
+# help: [F] `gri` - Git rebase interactive (rebase X latest commits together)
+# help:   [P1] Number of commits to rebase
+gri() {
+  git rebase -i head~$1
+}
+
 finishedLoading="${finishedLoading}This is from the git file\n"
