@@ -49,6 +49,9 @@ alias gck-='gck -'
 alias gapplygitignore='git rm -r --cached .'
 # help: [A] `gcl` - git clone
 alias gcl='git clone'
+# help: [A] `gbr` – git branch (styled)
+# src: http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+alias gbr='git for-each-ref --sort=-committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:bold blue)%(objectname:short)%(color:reset) %(contents:subject) %(color:green)(%(committerdate:relative))%(color:reset) %(color:bold blue)<%(authorname)>%(color:reset)"'
 
 
 ## Functions
