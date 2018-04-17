@@ -56,27 +56,27 @@ alias gbr='git for-each-ref --sort=-committerdate refs/heads/ --format="%(HEAD) 
 
 ## Functions
 
-# help: [F] `gcm` - Git Commit With Message 
+# help: [F] `gcm` - Git Commit With Message
 # help:     [P] Commit Message
-gcm () { 
-    gc -m "$1" 
+gcm () {
+    gc -m "$1"
 }
 
-# help: [F] `gcmp` - Git Commit With Message Then Push 
+# help: [F] `gcmp` - Git Commit With Message Then Push
 # help:     [P] Commit Message
-gcmp () { 
+gcmp () {
     gcm "$1" && gps
 }
 
-# help: [F] `gcam` - Git Commit All With Message 
+# help: [F] `gcam` - Git Commit All With Message
 # help:     [P] Commit Message
-gcam () { 
+gcam () {
     gaa && gc -m "$1"
 }
 
-# help: [F] `gcamp` - Git Commit All With Message Then Push 
+# help: [F] `gcamp` - Git Commit All With Message Then Push
 # help:     [P] Commit Message
-gcamp () { 
+gcamp () {
     gcam "$1" && gps
 }
 
