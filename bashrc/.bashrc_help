@@ -14,7 +14,13 @@ alias h-u='showhelp $configDir/.bashrc_utilities'
 # Function to display the help comments
 # Takes parameter of full file path to file to output help comments
 showhelp () {
-    awk '/(# help:\s.*)/ { printf substr($0, 9); printf "\n" }' $1 | sed ''/A/s//$(printf "\033[32mA\033[0m")/'' | sed ''/F/s//$(printf "\033[32mF\033[0m")/'' | sed ''/P/s//$(printf "\033[32mP\033[0m")/''
+    awk '/(# help:.*)/ { printf $0; printf "\n" }' $1 |
+    sed ''/A/s//$(printf "\033[32mA\033[0m")/'' |
+    sed ''/F/s//$(printf "\033[32mF\033[0m")/'' |
+    sed ''/P1/s//$(printf "\033[32mP1\033[0m")/'' |
+    sed -n 's/^.*# help: //p' |
+    sed '/^\// d' |
+    sed 's/^.* \(".*"$\)/\1/'
 }
 
 finishedLoading="${finishedLoading}Type 'h' for list of help commands\n"
