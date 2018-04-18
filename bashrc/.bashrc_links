@@ -1,3 +1,9 @@
 # Quick Links
 # help: `home` - cd ~
 alias home='cd ~'
+# help: [A] `..` - cd ..
+alias ..='cd ..'
+# help: [A] `...` - cd ..\..
+alias ...='cd ..;..'
+# help: [A] `-` - cd -
+alias -='cd -'
