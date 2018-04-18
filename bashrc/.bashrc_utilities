@@ -3,8 +3,6 @@
 alias sbrc='source ~/.bashrc'
 # help: [A] `obrc` - Open the .bashrc file in $editor
 alias obrc='$editor ~/.bashrc'
-# help: [A] `ocd` - Open the current directory
-alias ocd='explorer .'
 
 ## >> Edit below here << ##
 
@@ -17,4 +15,18 @@ alias ocd='explorer .'
 # help: 	[P] config name after '.bashrc_'
 oc () {
     $editor $configDir/.bashrc_$1
+}
+
+# help: [F] `ocd` - Open the current directory
+ocd () {
+    if [ "$OSTYPE" == "cygwin" ] || [ "$OSTYPE" == "msys" ]
+        # Windows
+        Explorer .
+	elif [ "$OSTYPE" == "darwin"* ]
+        # Mac OSX
+        Open .
+	else
+        # Linux
+        echo "I haven't figured out how to do this on linux yet"
+	fi
 }
