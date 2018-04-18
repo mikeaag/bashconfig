@@ -1,4 +1,4 @@
-# bashconfig
+# Bash Config
 Level up your Bash config
 
 ## Install
@@ -25,7 +25,6 @@ _NOTE: Enter the full path to your `bashrc` folder, *without* a trailing slash_
 
 Run `source ~/.bashrc`
 
-
 ## Features
 
 Easily split up your bash aliases into multiple files, and have them automatically loaded.
@@ -41,3 +40,7 @@ By default, debug mode is turned on.
 Debug mode provides output to show you which files have been loaded.
 
 To turn debug mode off, set `debug` to `0` in `~/.bashrc_settings`
+
+## Credits
+
+Originally developed by [Mike Gatward](https://github.com/mikeaag) with help from [Fred Rivett](https://github.com/fredrivett). See full list of [Contributors](https://github.com/mikeaag/bashconfig/graphs/contributors).
