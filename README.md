@@ -21,6 +21,19 @@ Edit `configDir` in `~/.bashrc_settings` to point at the `bashrc` folder you jus
 
 _NOTE: Enter the full path to your `bashrc` folder, *without* a trailing slash_
 
+### Step 4
+
+Run `source ~/.bashrc`
+
+
+## Features
+
+Easily split up your bash aliases into multiple files, and have them automatically loaded.
+
+Automatically load all `.bashrc_*` files within your `configDir`
+
+Add comments to your aliases which can be output to help you remember all your commands
+
 ## Debug mode
 
 By default, debug mode is turned on.

@@ -46,8 +46,8 @@ alias gckd='gck develop'
 alias gckm='gck master'
 # help: [A] `gck-` - go back to the previous branch
 alias gck-='gck -'
-# help: [A] `gapplygitignore` - Applies gitignore to commited files
-alias gapplygitignore='git rm -r --cached .'
+# help: [A] `gapplyignore` - Applies gitignore to commited files
+alias gapplyignore='git rm -r --cached .'
 # help: [A] `gcl` - git clone
 alias gcl='git clone'
 
