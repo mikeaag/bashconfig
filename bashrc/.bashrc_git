@@ -7,8 +7,11 @@ alias gpl='git pull'
 alias gps='git push'
 # help: [A] `gf` - git fetch
 alias gf='git fetch'
-# help: [A] `gb` - git branch
-alias gb='git branch'
+# help: [A] `gfs` - git fetch and show status
+alias gfs='gf; gs'
+# help: [A] `gbr` – git branch (styled)
+# src: http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+alias gbr='git for-each-ref --sort=-committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:bold blue)%(objectname:short)%(color:reset) %(contents:subject) %(color:green)(%(committerdate:relative))%(color:reset) %(color:bold blue)<%(authorname)>%(color:reset)"'
 # help: [A] `ga` - git add
 alias ga='git add'
 # help: [A] `gaa` - git add .
@@ -21,6 +24,8 @@ alias gr='git reset'
 alias gc='git commit'
 # help: [A] `gcwip` - commit everything with 'wip' as message
 alias gcwip='gcam "wip"'
+# help: [A] `gcwerp` - pop last commit off back to working tree (the reverse of gcwip)
+alias gcwerp='git reset head^'
 # help: [A] `gl` - pretty git log
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 # help: [A] `gll` - git log with changed files
@@ -49,28 +54,44 @@ alias gcl='git clone'
 
 ## Functions
 
-# help: [F] `gcm` - Git Commit With Message 
+# help: [F] `gcm` - Git Commit With Message
 # help:     [P] Commit Message
-gcm () { 
-    gc -m "$1" 
+gcm () {
+    gc -m "$1"
 }
 
-# help: [F] `gcmp` - Git Commit With Message Then Push 
+# help: [F] `gcmp` - Git Commit With Message Then Push
 # help:     [P] Commit Message
-gcmp () { 
+gcmp () {
     gcm "$1" && gps
 }
 
-# help: [F] `gcam` - Git Commit All With Message 
+# help: [F] `gcam` - Git Commit All With Message
 # help:     [P] Commit Message
-gcam () { 
+gcam () {
     gaa && gc -m "$1"
 }
 
-# help: [F] `gcamp` - Git Commit All With Message Then Push 
+# help: [F] `gcamp` - Git Commit All With Message Then Push
 # help:     [P] Commit Message
-gcamp () { 
+gcamp () {
     gcam "$1" && gps
+}
+
+# help: [F] `gri` - Git rebase interactive (rebase X latest commits together)
+# help:     [P] Number of commits to rebase
+gri() {
+  git rebase -i head~$1
+}
+
+# help: [F] `gcr` - Git change remote
+# help:     [P] New remote URL
+gcr() {
+  git remote -v;
+  git remote rm destination;
+  git remote -v;
+  git remote add origin $1;
+  git remote -v;
 }
 
 finishedLoading="${finishedLoading}This is from the git file\n"
