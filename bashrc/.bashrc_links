@@ -5,5 +5,5 @@ alias home='cd ~'
 alias ..='cd ..'
 # help: [A] `...` - cd ..\..
 alias ...='cd ..;..'
-# help: [A] `-` - cd -
-alias -='cd -'
+# help: [A] `cd-` - cd -
+alias cd-='cd -'

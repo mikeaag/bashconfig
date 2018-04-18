@@ -8,6 +8,9 @@ alias h-u='showhelp $configDir/.bashrc_utilities'
 # help: [A] `h-g` - Displays the commands for .bashrc_git
 alias h-g='showhelp $configDir/.bashrc_git'
 
+# help: [A] `h-l` - Displays the commands for .bashrc_links
+alias h-l='showhelp $configDir/.bashrc_links'
+
 ## >> Edit below here << ##
 
 
