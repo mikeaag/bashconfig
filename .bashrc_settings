@@ -1,0 +1,4 @@
+configDir='##DIR##'
+finishedLoading=''
+debug=1
+editor=vim

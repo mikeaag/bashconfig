@@ -1,8 +1,8 @@
 ## Utilities
 # help: [A] `sbrc` - Source the .bashrc file
 alias sbrc='source ~/.bashrc'
-# help: [A] `obrc` - Open the .bashrc file in vim
-alias obrc='vim ~/.bashrc'
+# help: [A] `obrc` - Open the .bashrc file in $editor
+alias obrc='$editor ~/.bashrc'
 # help: [A] `ocd` - Open the current directory
 alias ocd='explorer .'
 
@@ -16,5 +16,5 @@ alias ocd='explorer .'
 # help: [F] `oc` -  Open .bashrc_* file
 # help: 	[P] config name after '.bashrc_'
 oc () {
-    npp $configDir/.bashrc_$1
+    $editor $configDir/.bashrc_$1
 }
