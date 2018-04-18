@@ -1,8 +1,8 @@
 showOutput () {
-	if [ $debug == 1 ] 
-	then
-		echo -e $1
-	fi
+    if [ $debug == 1 ]
+    then
+	echo -e $1
+    fi
 }
 
 settings=~/.bashrc_settings
@@ -25,10 +25,10 @@ then
         if [ -f $f ]
         then
             . $f
-		    if [ $debug == 1 ] 
-			then
-		        showOutput "Loaded $f"
-		    fi
+	    if [ $debug == 1 ]
+		then
+		showOutput "Loaded $f"
+	    fi
         fi
     done
 fi
