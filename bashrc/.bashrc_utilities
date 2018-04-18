@@ -22,10 +22,10 @@ oc () {
 # Cross platform open the directory
 # $1 - path to open
 opendirectory () {
-    if [ "$OSTYPE" == "cygwin" ] || [ "$OSTYPE" == "msys" ]
+    if [ "$OSTYPE" == "cygwin" ] || [ "$OSTYPE" == "msys" ]; then
         # Windows
         Explorer $1
-	elif [ "$OSTYPE" == "darwin"* ]
+	elif [ "$OSTYPE" == "darwin"* ]; then
         # Mac OSX
         Open $1
 	else
