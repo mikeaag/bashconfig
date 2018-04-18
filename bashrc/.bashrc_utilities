@@ -3,6 +3,8 @@
 alias sbrc='source ~/.bashrc'
 # help: [A] `obrc` - Open the .bashrc file in $editor
 alias obrc='$editor ~/.bashrc'
+# help: [A] `ocd` - Open the current directory
+alias ocd='opendirectory .'
 
 ## >> Edit below here << ##
 
@@ -17,14 +19,15 @@ oc () {
     $editor $configDir/.bashrc_$1
 }
 
-# help: [F] `ocd` - Open the current directory
-ocd () {
+# Cross platform open the directory
+# $1 - path to open
+opendirectory () {
     if [ "$OSTYPE" == "cygwin" ] || [ "$OSTYPE" == "msys" ]
         # Windows
-        Explorer .
+        Explorer $1
 	elif [ "$OSTYPE" == "darwin"* ]
         # Mac OSX
-        Open .
+        Open $1
 	else
         # Linux
         echo "I haven't figured out how to do this on linux yet"
