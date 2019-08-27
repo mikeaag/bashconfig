@@ -14,6 +14,8 @@ Clone the repo
 ### Step 2
 
 Copy `.bashrc` and `.bashrc_settings` to `~/`
+`cp .bashrc ~/.bashrc`
+`cp .bashrc_settings ~/.bashrc_settings`
 
 ### Step 3
 
